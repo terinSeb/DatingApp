@@ -12,6 +12,7 @@ loggedIn: Boolean;
   constructor(private accounServive: AccountService) { }
 
   ngOnInit(): void {
+    this.getCurrentUser();
   }
   login(){
     this.accounServive.login(this.model).subscribe(response => {
@@ -22,7 +23,15 @@ loggedIn: Boolean;
     })
   }
   logout(){
+    this.accounServive.logout();
     this.loggedIn = false;
   }
-
+getCurrentUser(){
+  this.accounServive.currentUser$.subscribe(user => {
+    this.loggedIn = !!user;
+  },error =>{
+    console.log(error);
+  }
+  )
+}
 }
