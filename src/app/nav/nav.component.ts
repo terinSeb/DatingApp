@@ -8,30 +8,20 @@ import { AccountService } from '../_service/account.service';
 })
 export class NavComponent implements OnInit {
 model: any ={};
-loggedIn: Boolean;
-  constructor(private accounServive: AccountService) { }
 
-  ngOnInit(): void {
-    this.getCurrentUser();
+  constructor(public accounServive: AccountService) { }
+
+  ngOnInit(): void {   
   }
   login(){
     this.accounServive.login(this.model).subscribe(response => {
-      console.log(response);
-      this.loggedIn = true;
+      console.log(response);      
     }, error => {
       console.log(error);
     })
   }
   logout(){
-    this.accounServive.logout();
-    this.loggedIn = false;
+    this.accounServive.logout();    
   }
-getCurrentUser(){
-  this.accounServive.currentUser$.subscribe(user => {
-    this.loggedIn = !!user;
-  },error =>{
-    console.log(error);
-  }
-  )
-}
+
 }
