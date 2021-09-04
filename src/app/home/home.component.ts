@@ -20,4 +20,7 @@ registerToggle(){
 getUsers(){
   this.http.get('https://localhost:44336/api/users').subscribe(users => this.users = users)
 }
+cancelRegisterMode(event: boolean){
+this.registerMode = event;
+}
 }
