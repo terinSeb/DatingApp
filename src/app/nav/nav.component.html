@@ -4,37 +4,36 @@
       >Dating App</a
     >
 
-    <ul
-      class="navbar-nav me-auto mb-2 mb-md-0"
-      *ngIf="accounServive.currentUser$ | async"
-    >
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="#"
-          routerLink="/members"
-          routerLinkActive="active"
-          >Matches</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="#"
-          routerLink="/lists"
-          routerLinkActive="active"
-          >List</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="#"
-          routerLink="/messages"
-          routerLinkActive="active"
-          >Messages</a
-        >
-      </li>
+    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <ng-container *ngIf="accounServive.currentUser$ | async">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            routerLink="/members"
+            routerLinkActive="active"
+            >Matches</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            routerLink="/lists"
+            routerLinkActive="active"
+            >List</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            routerLink="/messages"
+            routerLinkActive="active"
+            >Messages</a
+          >
+        </li>
+      </ng-container>
       <li class="nav-item">
         <a class="nav-link" href="#" (click)="logout()">LogOut</a>
       </li>
