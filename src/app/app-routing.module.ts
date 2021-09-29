@@ -17,11 +17,10 @@ const routes: Routes = [
       {path: 'members', component: MemberListComponent, canActivate: [AuthGuard]},
       {path: 'members/:id', component: MemberDetailComponent},
       {path: 'lists', component: MemberListsComponent},
-      {path: 'messages', component: MessagesComponent},
-      {path: '**', component: HomeComponent,pathMatch:'full'}
+      {path: 'messages', component: MessagesComponent}     
     ]
-  }
-  
+  },
+  {path: '**', component: HomeComponent,pathMatch:'full'}
 ];
 
 @NgModule({
