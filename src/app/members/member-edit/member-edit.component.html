@@ -1,7 +1,7 @@
 <div class="row" *ngIf="member">
   <div class="col-4">Your Profile</div>
   <div class="col-8">
-    <div class="alert alert-info">
+    <div class="alert alert-info" *ngIf="editFrom.dirty">
       <p>
         <strong>Information: </strong>You have made some changes. Any unsaved
         changes will be lost.
@@ -38,7 +38,12 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" form="editForm" class="btn btn-success btn-block">
+        <button
+          [disabled]="!editFrom.dirty"
+          type="submit"
+          form="editForm"
+          class="btn btn-success btn-block"
+        >
           Save Changes
         </button>
       </div>
