@@ -26,12 +26,13 @@ export class PhotoEditorComponent implements OnInit {
   ngOnInit(): void {
     this.initializeUploader();
   }
-  fileOverBase(): void {
+  fileOverBase(e: any): void {
     this.initializeUploader = e;
   }
   initializeUploader() {
     this.uploader = new FileUploader({
-      url: this.baseUrl + 'user/add-photo' + this.user.token,
+      url: this.baseUrl + 'user/add-photo',
+      authToken: 'Bearer ' + this.user.token,
       isHTML5: true,
       allowedFileType: ['image'],
       removeAfterUpload: true,
