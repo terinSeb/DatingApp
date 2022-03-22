@@ -26,6 +26,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { TexxtInputComponent } from './_forms/texxt-input/texxt-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { TexxtInputComponent } from './_forms/texxt-input/texxt-input.component'
     MemberEditComponent,
     PhotoEditorComponent,
     TexxtInputComponent,
+    DateInputComponent,
   ],
   imports: [
     BrowserModule,
