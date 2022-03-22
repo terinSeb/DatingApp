@@ -12,13 +12,7 @@ export class TexxtInputComponent implements ControlValueAccessor {
   constructor(@Self() public ngControl: NgControl) {
     this.ngControl.valueAccessor = this;
   }
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnTouched(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
+  writeValue(obj: any): void {}
+  registerOnChange(fn: any): void {}
+  registerOnTouched(fn: any): void {}
 }
