@@ -19,14 +19,9 @@ export class MemberListsComponent implements OnInit {
   constructor(private memberSerive: MembersService) {}
 
   ngOnInit(): void {
-    // this.members$ = this.memberSerive.getMembers();
     this.loadMembers();
   }
-  // loadMembers() {
-  //   this.memberSerive.getMembers().subscribe((memb) => {
-  //     this.members = memb;
-  //   });
-  // }
+
   loadMembers() {
     this.memberSerive.getMembers(this.pageNumber, this.pageSize).subscribe({
       next: (response) => {
