@@ -55,7 +55,7 @@
         alt="{{ user.photoUrl }}"
       />
       <a class="dropdown-toggle text-light ml-2" dropdownToggle
-        >Welcome {{ user.userName | titlecase }}</a
+        >Welcome {{ user.knownAs }}</a
       >
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
